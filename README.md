@@ -79,12 +79,6 @@ An interactive 3D world map to visualize real-time and historical network latenc
 
 ---
 
-## 👨‍💻 Author
-
-**Ridam Hazra**
-
----
-
 ## 📄 License
 
 MIT License
