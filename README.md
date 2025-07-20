@@ -2,6 +2,8 @@
 
 An interactive 3D world map to visualize real-time and historical network latency across major cloud providers (AWS, GCP, Azure) and cryptocurrency exchange servers. Built using **Next.js**, **React Three Fiber**, and **Cloudflare Radar API**.
 
+![Globe with latency lines](./public/Demo.png)
+
 ## 📸 Features
 
 - 🌍 3D globe with realistic textures
