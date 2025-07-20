@@ -1,40 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🌐 Latency Topology Visualizer
 
-## Getting Started
+An interactive 3D world map to visualize real-time and historical network latency across major cloud providers (AWS, GCP, Azure) and cryptocurrency exchange servers. Built using **Next.js**, **React Three Fiber**, and **Cloudflare Radar API**.
 
-First, run the development server:
+## 📸 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 🌍 3D globe with realistic textures
+- 📍 Markers for exchange server locations with tooltip overlays
+- 🔄 Real-time animated latency links using:
+  - Pulsing effects
+  - Dashed lines
+  - Color-coded latency
+- 🎨 Light/Dark theme support
+- 🔁 Cloudflare Radar API integration for real-world latency data
+- 📱 Mobile support with camera controls and pinch-zoom
+
+---
+
+## 🚀 Tech Stack
+
+| Layer     | Tech                                           |
+|-----------|------------------------------------------------|
+| Frontend  | React, Next.js, Tailwind CSS, ShadCN UI        |
+| 3D Engine | React Three Fiber, Drei, GLSL shaders          |
+| Data      | Cloudflare Radar API (or mock latency fallback)|
+| Auth      | Google OAuth (Planned)                         |
+
+---
+
+## 🧱 Project Structure
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+/components
+├── ThreeScene.tsx          # 3D canvas with globe and server markers
+├── LatencyLine.tsx         # Animated latency lines with pulse
+├── RealTimeLatency.tsx     # Cloudflare Radar latency API fetch
+├── CameraController.tsx    # Camera animation logic
+/lib
+├── geoUtils.ts             # Lat/lng to 3D conversion utils
+├── exchangeData.ts         # List of exchanges and cloud providers
+├── latencyData.ts          # Mock latency generator
+/public
+├── earthmap.jpg            # Texture for the globe
+/pages
+└── api/
+└── latency.ts          # Optional proxy API for latency fetch
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## ✨ Visual Effects Used
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+* 🌐 Earth texture with `meshStandardMaterial`
+* 📍 Server markers with hoverable HTML tooltips
+* 🔁 Latency links animated with:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  * ShaderMaterial for latency thresholds
+  * Dashed line effects
+  * Color-coded latencies
+* 🔄 Auto-refresh every 5 seconds
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🎮 Controls
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+* Drag to rotate globe
+* Scroll to zoom in/out
+* Tooltip on hover (PC) or tap (Mobile)
+* Touch-gesture camera support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📦 To-Do (Upcoming Phases)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* 📊 Historical latency timeline
+* 📍 Add more cloud regions and exchanges
+* 🔒 Google Login + user save settings
+* 📤 Export latency reports
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
+
+## 👨‍💻 Author
+
+**Ridam Hazra**
+
+---
+
+## 📄 License
+
+MIT License
